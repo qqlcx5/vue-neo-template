@@ -1,0 +1,80 @@
+/* 最大宽度 */
+$max-width: 750px;
+
+/* 颜色变量 */
+
+/* 行为相关颜色 */
+$color-primary: #1989fa;
+$color-info: #989fa8;
+$color-success: #30bf78;
+$color-warning: #ff8811;
+$color-danger: #fe3b30;
+
+/* 文字基本颜色 */
+$color-text: #101316; //主要文字颜色
+$color-sub-text: #545f6f; //次级文字颜色
+$color-grey-text: #767f8b; //辅助灰色
+$text-inverse-color: #fff; //反色
+$color-placeholder: #989fa8;
+$color-disable: #989fa8;
+
+// 日历相关配置
+$calendar-color: rgb(60, 156, 255);
+
+/* 背景颜色 */
+$bg-color: #f6f6f7;
+$bg-white-color: #fff;
+$bg-color-hover: #eee;
+
+/* 蒙层颜色 */
+$mask-bg: rgba(0, 0, 0, 0.55);
+
+/* 边框颜色 */
+$border-color: #ededed;
+
+/* 尺寸变量 */
+$input-height: 48px;
+$button-height-sm: 56px;
+$button-height: 76px;
+$button-height-lg: 88px;
+
+/* 文字尺寸 */
+$font-sm: 24px;
+$font-base: 28px;
+$font-lg: 32px;
+$font-xl: 48px;
+
+/* Border Radius */
+$border-radius-sm-mini: 8px; // 标签
+$border-radius-sm: 12px; // 按钮
+$border-radius-base: 16px;
+$border-radius-lg: 24px;
+$border-radius-circle: 50%;
+
+/* 水平间距 */
+$spacing-row-sm: 8px;
+$spacing-row-base: 12px;
+$spacing-row-lg: 24px;
+
+/* 垂直间距 */
+$spacing-col-sm: 8px;
+$spacing-col-base: 12px;
+$spacing-col-lg: 24px;
+
+// 键盘
+$keyboard-spacing-sm: 8px;
+$keyboard-spacing-base: 12px;
+$keyboard-border-radius: 8px;
+$keyboard-box-shadow: 0 4px 0 #d0d1d4;
+$keyboard-border: #ccc;
+
+// 键盘
+$keyboard-spacing-sm: 8px;
+$keyboard-spacing-base: 12px;
+$keyboard-border-radius: 8px;
+$keyboard-box-shadow: 0 4px 0 #d0d1d4;
+$keyboard-border: #ccc;
+
+/* 亮牌颜色 */
+$bright-card: #f5f5f5;
+$bright-card-light: #fff;

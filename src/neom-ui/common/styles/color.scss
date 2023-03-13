@@ -1,0 +1,54 @@
+// 字体颜色
+.n-primary {
+  color: $color-primary;
+}
+.n-info {
+  color: $color-info;
+}
+.n-success {
+  color: $color-success;
+}
+.n-warning {
+  color: $color-warning;
+}
+.n-danger {
+  color: $color-danger;
+}
+.n-text {
+  color: $color-text;
+}
+.n-sub-text {
+  color: $color-sub-text;
+}
+.n-grey {
+  color: $color-grey-text;
+}
+.n-white {
+  color: $text-inverse-color;
+}
+.n-placeholder {
+  color: $color-placeholder;
+}
+.n-disabled {
+  color: $color-disable;
+}
+
+// 背景颜色
+.n-primary-bg {
+  background-color: $color-primary;
+}
+.n-info-bg {
+  background-color: $color-info;
+}
+.n-success-bg {
+  background-color: $color-success;
+}
+.n-warning-bg {
+  background-color: $color-warning;
+}
+.n-danger-bg {
+  background-color: $color-danger;
+}
+.n-white-bg {
+  background-color: $bg-white-color;
+}

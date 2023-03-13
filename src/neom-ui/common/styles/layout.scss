@@ -1,0 +1,141 @@
+.n-flex {
+  @include flex(row);
+}
+
+.n-flex-column {
+  @include flex(column);
+}
+
+.n-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.n-reverse {
+  flex-direction: row-reverse;
+}
+
+.n-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.n-justify-between {
+  justify-content: space-between;
+}
+
+.n-justify-around {
+  justify-content: space-around;
+}
+
+.n-justify-end {
+  justify-content: flex-end;
+}
+
+.n-align-center {
+  align-items: center;
+}
+
+.n-align-start {
+  align-items: flex-start;
+}
+
+.n-align-end {
+  align-items: flex-end;
+}
+
+.n-justify-center {
+  justify-content: center;
+}
+.n-align-self-start {
+  align-self: flex-start;
+}
+
+.n-align-self-end {
+  align-self: flex-end;
+}
+
+.n-align-self-center {
+  align-self: center;
+}
+
+.n-justify-self-start {
+  justify-self: start;
+}
+
+.n-justify-self-center {
+  justify-self: center;
+}
+
+.n-justify-self-end {
+  justify-self: end;
+}
+
+.n-shrink-0 {
+  flex-shrink: 0;
+}
+
+.n-flex-ajcenter {
+  @extend .n-flex;
+  @extend .n-align-center;
+  @extend .n-justify-center;
+}
+
+.n-flex-column-ajcenter {
+  @extend .n-flex-column;
+  @extend .n-align-center;
+  @extend .n-justify-center;
+}
+
+.n-row {
+  @include flex(row);
+  flex-wrap: wrap;
+}
+@for $i from 1 through 12 {
+  .n-col-#{$i} {
+    flex: 0 0 calc(#{100 * $i + "%"} / 12);
+    min-width: 0;
+  }
+  @if $i <= 6 {
+    .n-flex-#{$i} {
+      flex: #{$i};
+      min-width: 0;
+    }
+    .n-flex-column {
+      & > .n-flex-#{$i},
+      & > .n-col-#{$i} {
+        min-width: auto;
+        min-height: 0;
+      }
+    }
+  }
+}
+
+// 通过基础的 12 分栏，迅速简便地创建布局
+.n-row {
+  padding: $spacing-col-base $spacing-row-base;
+  &-sm {
+    padding: $spacing-col-base / 2 $spacing-col-base / 2;
+    [class*="n-col-"] {
+      padding: $spacing-col-base / 2 $spacing-col-base / 2;
+    }
+  }
+  &-sm {
+    padding: $spacing-col-base * 2 $spacing-col-base * 2;
+    [class*="n-col-"] {
+      padding: $spacing-col-base * 2 $spacing-col-base * 2;
+    }
+  }
+}
+
+[class*="n-col-"] {
+  padding: $spacing-col-base $spacing-row-base;
+  position: relative;
+}
+.n-col-1 {
+  padding: 0;
+}
+.n-col-2 {
+  padding: 0;
+}
+.n-col-3 {
+  padding: 0;
+}

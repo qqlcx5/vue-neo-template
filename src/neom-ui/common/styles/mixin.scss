@@ -1,0 +1,113 @@
+@mixin abs($top, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin fixed($top, $right: null, $bottom: null, $left: null) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin site($left: 0, $right: null) {
+  position: absolute;
+  left: $left;
+  right: $right;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin siteCenter() {
+  @include abs(50%, 50%);
+  transform: translate(50%, -50%);
+}
+
+@mixin radius($topL, $topR: null, $bottomR: null, $bottomL: null) {
+  $bottomL: #{if($bottomL, $bottomL, if($bottomR, $bottomR, $topL))};
+  $bottomR: #{if($bottomR, $bottomR, $topL)};
+  $topR: #{if($topR, $topR, $topL)};
+  border-radius: $topL $topR $bottomR $bottomL;
+}
+
+@mixin tst(
+  $property: all,
+  $duration: 0.3s,
+  $delay: 0s,
+  $fun: cubic-bezier(0.25, 0.1, 0.25, 1)
+) {
+  $split-values: str-split($property, ",");
+  $lastStr: $duration $delay $fun unquote(",");
+  $list: ();
+  @each $value in $split-values {
+    $list: append($list, (unquote($value) $lastStr));
+  }
+  transition: $list;
+}
+
+// STR-分裂
+@function str-split($str, $separator) {
+  $string: quote($str);
+  // empty array/list
+  $split-arr: ();
+  // first index of separator in string
+  $index: str-index($string, $separator);
+  // loop through string
+  @while $index != null {
+    // get the substring from the first character to the separator
+    $item: str-slice($string, 1, $index - 1);
+    // push item to array
+    $split-arr: append($split-arr, $item);
+    // remove item and separator from string
+    $string: str-slice($string, $index + 1);
+    // find new index of separator
+    $index: str-index($string, $separator);
+  }
+  // add the remaining string to list (the last item)
+  $split-arr: append($split-arr, $string);
+
+  @return $split-arr;
+}
+
+@mixin ellipsis($column: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $column == 1 {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $column;
+  }
+}
+
+@mixin flex($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+/**
+ * @description iphonex及iphone系列兼容
+ * @param {String} $prop属性名字如height，padding
+ * @param {String} $num初始高度，只能写一些，不然低版本安卓会出问题
+ * @params {String} $area 安全区域位置===》top或者bottom
+ * @params {String} $direction 方向（属性的拼接值）如果$prop是padding，它是bottom的话，拼接起来就是padding-bocttom
+ * @params {String} $plus 属性的加减，这边会创建出来calc来计算属性
+ * @example @include iosSafeArea(padding-top, 0rpx, top);
+ */
+@mixin iosSafeArea(
+  $prop: padding,
+  $num: 0px,
+  $area: top,
+  $direction: null,
+  $plus: "+"
+) {
+  $newPro: #{$prop}#{if($direction, ("-" + $direction), "")};
+  #{$newPro}: #{$num};
+  #{$newPro}: calc(#{$num} #{$plus} constant(safe-area-inset-#{$area}));
+  #{$newPro}: calc(#{$num} #{$plus} env(safe-area-inset-#{$area}));
+}

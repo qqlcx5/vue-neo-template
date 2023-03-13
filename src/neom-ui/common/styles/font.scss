@@ -1,0 +1,16 @@
+@for $i from 20 through 80 {
+  @if $i % 2 == 0 {
+    .n-fs-#{$i} {
+      font-size: #{$i}px;
+    }
+  }
+}
+.n-bold {
+  font-weight: bold;
+}
+.n-small {
+  font-size: 80%;
+}
+.n-normal {
+  font-weight: normal;
+}

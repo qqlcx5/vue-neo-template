@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'd-din';
+  src: url('https://static.oss.meijiabang.com/font/d-din/D-DIN.eot');
+  src: url('https://static.oss.meijiabang.com/font/d-din/D-DIN.eot?#iefix') format('embedded-opentype'), url('https://static.oss.meijiabang.com/font/d-din/D-DIN.woff2') format('woff2'), url('https://static.oss.meijiabang.com/font/d-din/D-DIN.woff') format('woff'),
+    url('https://static.oss.meijiabang.com/font/d-din/D-DIN.ttf') format('truetype'), url('https://static.oss.meijiabang.com/font/d-din/D-DIN.svg#zzyx') format('svg');
+}
+
+@font-face {
+  font-family: 'd-din-bold';
+  src: url('https://static.oss.meijiabang.com/font/d-din/D-DIN-Bold.eot');
+  src: url('https://static.oss.meijiabang.com/font/d-din/D-DIN-Bold.eot?#iefix') format('embedded-opentype'), url('https://static.oss.meijiabang.com/font/d-din/D-DIN-Bold.woff2') format('woff2'), url('https://static.oss.meijiabang.com/font/d-din/D-DIN-Bold.woff') format('woff'),
+    url('https://static.oss.meijiabang.com/font/d-din/D-DIN-Bold.ttf') format('truetype'), url('https://static.oss.meijiabang.com/font/d-din/D-DIN-Bold.svg#D-DIN-Bold') format('svg');
+}
+
+.d-din {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'd-din' !important;
+}
+
+.d-din-bold {
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'd-din-bold' !important;
+}

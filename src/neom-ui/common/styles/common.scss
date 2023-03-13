@@ -1,0 +1,162 @@
+// 字体对齐方式
+.n-tl {
+  text-align: left;
+}
+.n-tc {
+  text-align: center;
+}
+.n-tr {
+  text-align: right;
+}
+// ios安全区域
+.n-safe-area {
+  width: 100%;
+  &-inset-top {
+    @include iosSafeArea(padding-top, 0rpx, top);
+  }
+  &-inset-bottom {
+    @include iosSafeArea(padding-bottom, 0rpx, bottom);
+  }
+}
+// 文字截断省略号
+$ellipsis-lines: 1, 2, 3, 4, 5;
+.n-ellipsis {
+  @include ellipsis(1);
+}
+@each $i in $ellipsis-lines {
+  .n-ellipsis-#{$i} {
+    @include ellipsis($i);
+  }
+}
+// 对其方式
+$vertical-value: baseline, sub, super, top, text-top, middle, bottom,
+  text-bottom, inherit;
+@each $i in $vertical-value {
+  .n-vertical-#{$i} {
+    vertical-align: $i;
+  }
+}
+// 文字不换行
+.n-nowrap {
+  white-space: nowrap;
+}
+// 线
+.n-line {
+  height: 1px;
+  background-color: $border-color;
+  transform: scaleY(0.5);
+  width: 100%;
+}
+// 上下边框
+.n-underline,
+.n-underline__top {
+  position: relative;
+  &::after {
+    content: "";
+    @include abs(null, 0, 0, 0);
+    height: 1px;
+    background-color: $border-color;
+    transform: scaleY(0.5);
+  }
+}
+.n-underline__top::after {
+  top: 0;
+  bottom: auto;
+}
+
+// 上下边框
+.n-underline__right,
+.n-underline__left {
+  position: relative;
+  &::after {
+    content: "";
+    @include abs(0, 0, 0);
+    width: 1px;
+    background-color: $border-color;
+    transform: scaleX(0.5);
+  }
+}
+.n-underline__left::after {
+  left: 0;
+  right: auto;
+}
+
+.n-relative {
+  position: relative;
+}
+
+.n-bg-color {
+  background-color: $bg-color;
+}
+
+// 4边边框
+.n-border {
+  position: relative;
+  &::after {
+    content: "";
+    @include abs(0, null, null, 0);
+    width: 200%;
+    height: 200%;
+    transform-origin: 0 0;
+    color: inherit;
+    border: 1px solid $border-color;
+    transform: scale(0.5);
+  }
+}
+
+// 圆角
+.n-radius-sm {
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+}
+.n-radius {
+  border-radius: $border-radius-base;
+  overflow: hidden;
+}
+.n-radius-lg {
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+}
+.n-radius-circle {
+  border-radius: $border-radius-circle;
+  overflow: hidden;
+}
+
+.n-line-through {
+  text-decoration: line-through;
+}
+
+.n-break-all {
+  word-break: break-all;
+}
+
+.n-inline-block {
+  display: inline-block;
+}
+
+.n-absolute {
+  position: absolute;
+}
+
+.n-width-full {
+  width: 100%;
+}
+
+.n-height-full {
+  height: 100%;
+}
+.n-width-80 {
+  width: 80%;
+}
+
+.n-over-hidden {
+  overflow: hidden;
+}
+// 元素隐藏
+.n-hidden {
+  display: none;
+}
+
+.n-zIndex {
+  z-index: 10;
+}
