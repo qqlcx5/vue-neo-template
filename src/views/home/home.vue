@@ -8,6 +8,31 @@
         <checkbox></checkbox>
     </div>
     <DatePicker></DatePicker>
+    <dialog></dialog>
+    <div>
+
+        <MessageBox></MessageBox>
+    </div>
+    <div>
+        Message
+        <Message></Message>
+    </div>
+    <Dropdown></Dropdown>
+    <popconfirm></popconfirm>
+    <div>
+        drawer
+        <drawer></drawer>
+    </div>
+    <div>
+        Popover
+        <Popover></Popover>
+    </div>
+    <div>
+        Loading
+        <Loading></Loading>
+    </div>
+    <Statistic></Statistic>
+    <VTable></VTable>
 </template>
 
 <script>
