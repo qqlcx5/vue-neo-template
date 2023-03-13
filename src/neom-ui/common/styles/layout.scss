@@ -91,7 +91,7 @@
 }
 @for $i from 1 through 12 {
   .n-col-#{$i} {
-    flex: 0 0 calc(#{100 * $i + "%"} / 12);
+    flex: 0 0 calc(#{100 * $i + '%'} / 12);
     min-width: 0;
   }
   @if $i <= 6 {
@@ -113,20 +113,20 @@
 .n-row {
   padding: $spacing-col-base $spacing-row-base;
   &-sm {
-    padding: $spacing-col-base / 2 $spacing-col-base / 2;
-    [class*="n-col-"] {
-      padding: $spacing-col-base / 2 $spacing-col-base / 2;
+    padding: calc($spacing-col-base / 2);
+    [class*='n-col-'] {
+      padding: calc($spacing-col-base / 2);
     }
   }
   &-sm {
     padding: $spacing-col-base * 2 $spacing-col-base * 2;
-    [class*="n-col-"] {
+    [class*='n-col-'] {
       padding: $spacing-col-base * 2 $spacing-col-base * 2;
     }
   }
 }
 
-[class*="n-col-"] {
+[class*='n-col-'] {
   padding: $spacing-col-base $spacing-row-base;
   position: relative;
 }

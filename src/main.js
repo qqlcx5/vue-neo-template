@@ -5,6 +5,7 @@ import App from './App.vue'
 import router from './router'
 
 import './assets/main.css'
+import '@/neom-ui/common/styles/index.scss'
 
 const app = createApp(App)
 
