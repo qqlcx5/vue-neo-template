@@ -6,9 +6,6 @@ module.exports = {
       viewportWidth: 750, // 视窗的宽度，对应设计稿的宽度
       viewportUnit: 'vw', // 指定需要转换成的视窗单位，建议使用 rem
       fontViewportUnit: 'vw', // 字体使用的视口单位
-      // viewportWidth: 1599.96, // 视窗的宽度，对应设计稿的宽度
-      // viewportUnit: 'rem', // 指定需要转换成的视窗单位，建议使用 rem
-      // fontViewportUnit: 'rem', // 字体使用的视口单位
       unitPrecision: 13, // 指定`px`转换为视窗单位值的小数后 x位数
       viewportHeight: 1334, //视窗的高度，正常不需要配置
       propList: ['*'], // 能转化为 rem的属性列表
@@ -17,9 +14,9 @@ module.exports = {
       mediaQuery: false, // 允许在媒体查询中转换
       replace: true, //是否直接更换属性值，而不添加备用属性
       exclude: /node_modules\/(?!(element-plus))/, //忽略某些文件夹下的文件或特定文件，例如 'node_modules' 下的文件
-      landscape: false, //是否添加根据 landscapeWidth 生成的媒体查询条件 @media (orientation: landscape)
+      landscape: true, //是否添加根据 landscapeWidth 生成的媒体查询条件 @media (orientation: landscape)
       landscapeUnit: 'vw', //横屏时使用的单位
-      landscapeWidth: 1980 //横屏时使用的视口宽度
+      landscapeWidth: 1334 //横屏时使用的视口宽度
     }
   }
 }
