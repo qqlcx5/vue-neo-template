@@ -1,7 +1,6 @@
 <template>
-    <van-button type="primary" />
-    <van-button type="primary" />
     <el-button>我是 ElButton</el-button>
+    <van-button type="danger">危险按钮</van-button>
     <scrollbar></scrollbar>
     <autocomplete></autocomplete>
     <div>
